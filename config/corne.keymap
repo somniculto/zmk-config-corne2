@@ -48,7 +48,7 @@
    &kp HASH   &kp Q &kp W &kp T &kp E &kp I    &kp Y &kp K &kp U &kp SEMI &kp DOT &kp BSPC
    &kp LSHFT  &kp A &kp D &kp R &kp O &kp P    &kp H &kp COMMA &kp L &kp COLON &kp UNDER &kp QMARK
    &kp LCTRL  &kp Z &kp X &kp C &kp V &kp S    &kp B &kp J &kp N &kp LT &kp GT &kp RSHFT
-                             &kp LGUI &TOG 1   &kp SPACE   &kp RET   &tOG 0    &kp RALT
+                             &kp LGUI &tog 1   &kp SPACE   &kp RET   &tog 0    &kp RALT
                         >;
                 };
         };
