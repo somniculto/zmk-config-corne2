@@ -22,9 +22,10 @@
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
    &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &tog 1 &kp SPACE   &kp RET &tog 2 &kp RALT
+                  &kp LGUI &to 1 &kp SPACE   &kp RET &to 2 &kp RALT
                         >;
                 };
+
                 lower_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
@@ -35,9 +36,10 @@
    &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
    &kp LCTRL &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp MINUS
    &kp LSHFT  &kp PLUS    &kp UNDER    &kp EQUAL  &kp BSLH  &kp PIPE    &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp COMMA &kp DOT
-                                    &kp LGUI     &tog 0       &kp SPACE      &kp RET  &tog 2   &kp RALT
+                                    &kp LGUI     &to 0       &kp SPACE      &kp RET  &to 2   &kp RALT
                         >;
                 };
+
                 raise_layer {
 // -----------------------------------------------------------------------------------------
 // |   #  |  Q  |  W  |  T  |  E  |  I  |   |  Y  |  K  |  U  |  ;  |  .  | BKSP |
@@ -48,27 +50,7 @@
    &kp HASH   &kp Q &kp W &kp T &kp E &kp I    &kp Y &kp K &kp U &kp SEMI &kp DOT &kp BSPC
    &kp LSHFT  &kp A &kp D &kp R &kp O &kp P    &kp H &kp COMMA &kp L &kp COLON &kp UNDER &kp QMARK
    &kp LCTRL  &kp Z &kp X &kp C &kp V &kp S    &kp B &kp J &kp N &kp LT &kp GT &kp RSHFT
-                             &kp LGUI &tog 1   &kp SPACE   &kp RET   &tog 0    &kp RALT
-                        >;
-                };
-/ {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
-
-                tri_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | BTCLR | BT1 | BT2 | BT3 | BT4 | BT5 |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI | DEF | SPC |   | ENT | LWR | ALT |
-                        bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4    &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                             &kp LGUI &tog 0   &kp SPACE   &kp RET   &tog 1    &kp RALT
+                             &kp LGUI &to 1   &kp SPACE   &kp RET   &to 0    &kp RALT
                         >;
                 };
         };
