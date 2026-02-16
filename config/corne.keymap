@@ -20,6 +20,68 @@
 / {
     combos { compatible = "zmk,combos"; };
 
+    behaviors {
+        LongPress: LongPress {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LONGPRESS";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <350>;
+            flavor = "tap-preferred";
+        };
+
+        HMShiftR: HMShiftR {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMSHIFTR";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            hold-while-undecided;
+            hold-trigger-key-positions = <0 1 2 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 3>;
+            hold-trigger-on-release;
+        };
+
+        HMShiftL: HMShiftL {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMSHIFTL";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            hold-while-undecided;
+            hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
+            hold-trigger-on-release;
+        };
+
+        HMR: HMR {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMR";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            hold-while-undecided;
+            hold-trigger-key-positions = <0 1 2 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 3>;
+            hold-trigger-on-release;
+            flavor = "tap-preferred";
+        };
+
+        HML: HML {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HML";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            hold-while-undecided;
+            hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
+            hold-trigger-on-release;
+            flavor = "tap-preferred";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -31,10 +93,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB           &kp Q  &kp W  &kp E  &kp R           &kp T           &kp Y          &kp U      &kp I       &kp O      &kp P         &kp ESCAPE
-&kp CAPSLOCK      &kp A  &kp S  &kp D  &kp F           &kp G           &kp H          &kp J      &kp K       &kp L      &kp SEMI      &kp SQT
-&kp LEFT_CONTROL  &kp Z  &kp X  &kp C  &kp V           &kp LEFT_ALT    &kp B          &kp N      &kp M       &kp COMMA  &kp QUESTION  &kp SLASH
-                                &to 1  &kp LEFT_SHIFT  &kp SPACE       &kp BACKSPACE  &kp ENTER  &kp PERIOD
+&kp TAB           &kp Q                &kp W               &kp E               &kp R                   &kp T        &kp Y                           &kp U                    &kp I             &kp O             &kp P                    &kp ESCAPE
+&kp CAPSLOCK      &HML LEFT_CONTROL A  &HML LEFT_ALT S     &HML LEFT_GUI D     &HMShiftL LEFT_SHIFT F  &kp G        &kp H                           &HMShiftR RIGHT_SHIFT J  &HMR RIGHT_GUI K  &HMR RIGHT_ALT L  &HMR RIGHT_CONTROL SEMI  &kp SQT
+&kp LEFT_CONTROL  &LongPress LC(Z) Z   &LongPress RC(X) X  &LongPress RC(C) C  &LongPress RC(V) V      &kp B        &kp N                           &kp M                    &kp COMMA         &kp PERIOD        &kp SLASH                &kp MINUS
+                                                           &to 1               &kp LEFT_SHIFT          &kp SPACE    &LongPress RIGHT_ALT BACKSPACE  &kp ENTER                &kp QUESTION
             >;
         };
 
@@ -76,10 +138,10 @@
             //                        |  DEF |      | LWR  |   | RSE |     |     |
 
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none  &none  &none  &none  &none  &none
-&none       &none         &none         &none         &none         &none           &none  &none  &none  &none  &none  &none
-&none       &none         &none         &none         &none         &none           &none  &none  &none  &none  &none  &none
-                                        &sys_reset    &none         &to 0           &to 0  &to 1  &to 2
+&bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none  &none  &none  &none  &none  &none
+&none        &none         &none         &none         &none         &none           &none  &none  &none  &none  &none  &none
+&bootloader  &none         &none         &none         &none         &none           &none  &none  &none  &none  &none  &bootloader
+                                         &sys_reset    &none         &to 0           &to 0  &to 1  &to 2
             >;
         };
     };
