@@ -93,10 +93,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB           &kp Q               &kp W               &kp E               &kp R               &kp T                          &kp Y                           &kp U      &kp I          &kp O       &kp P          &kp ESCAPE
-&kp CAPSLOCK      &kp S               &kp S               &kp D               &kp F               &kp G                          &kp H                           &kp J      &kp K          &kp L       &kp SEMICOLON  &kp SQT
-&kp LEFT_CONTROL  &LongPress LC(Z) Z  &LongPress RC(X) X  &LongPress RC(C) C  &LongPress RC(V) V  &kp B                          &kp N                           &kp M      &kp COMMA      &kp PERIOD  &kp SLASH      &kp MINUS
-                                                          &to 1               &kp LEFT_SHIFT      &LongPress LEFT_SHIFT SPACE    &LongPress RIGHT_ALT BACKSPACE  &kp ENTER  &kp RIGHT_GUI
+&kp TAB           &kp Q               &kp W               &kp E               &kp R               &kp T                          &kp Y                           &kp U      &kp I                          &kp O       &kp P          &kp ESCAPE
+&kp CAPSLOCK      &kp A               &kp S               &kp D               &kp F               &kp G                          &kp H                           &kp J      &kp K                          &kp L       &kp SEMICOLON  &kp SQT
+&kp LEFT_CONTROL  &LongPress LC(Z) Z  &LongPress RC(X) X  &LongPress RC(C) C  &LongPress RC(V) V  &kp B                          &kp N                           &kp M      &kp COMMA                      &kp PERIOD  &kp SLASH      &kp MINUS
+                                                          &to 1               &mo 1               &LongPress LEFT_SHIFT SPACE    &LongPress RIGHT_ALT BACKSPACE  &kp ENTER  &LongPress RIGHT_GUI QUESTION
             >;
         };
 
